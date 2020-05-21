@@ -1,13 +1,14 @@
 --- 
 title: "The Science and Art of Data"
 author: "Hui Lin and Ming Li"
-date: '`r Sys.Date()`'
-output: pdf_document
-bibliography: bibliography.bib
-description: This is the handouts for CE course at JSM 2017
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
 link-citations: yes
-csl: advances-in-computational-mathematics.csl
-biblio-style: apalike
+description: This is the handouts for CE course at JSM 2017
+bibliography: bibliography.bib
 ---
 
 ```{r, echo=FALSE}
@@ -241,7 +242,7 @@ Is the list getting a little scary? It can get even longer. Don't worry if you d
 In addition to technical knowledge, there are some critical soft skills.  These include the ability to translate practical problems into data problems, excellent communication skill, attention to detail,  storytelling and so on. We will discuss it in a later chapter in more detail. 
 
 <center>
-![]("http://scientistcafe.com/book/Figure/SkillEN.png")
+![](http://scientistcafe.com/book/Figure/SkillEN.png)
 </center>
 
 <!--
@@ -2332,7 +2333,9 @@ It is highly recommended to store each step of the data and the R code, making t
 Load the R packages first:
 
 ```{r}
-source("https://raw.githubusercontent.com/happyrabbit/CE_JSM2017/master/Rcode/00Require.R")
+source("../Rcode/00-course-setup.R")
+# source("../Rcode/") 
+  # "https://raw.githubusercontent.com/happyrabbit/CE_JSM2017/master/Rcode/00Require.R")
 ```
 ## Data Cleaning
 
@@ -3784,13 +3787,13 @@ width=100% }
 The control part of the source code is (analogy to `ui` in `shiny`): 
 
 ```{r comment='',echo=FALSE}
-cat(readLines('segmentdb_ui.csv'), sep = '\n')
+# cat(readLines('./segmentdb_ui.csv'), sep = '\n')
 ```
 
 The reactive expressions are  (analogy to `server` in `shiny`): 
 
 ```{r comment='',echo=FALSE}
-cat(readLines('segmentdb_server.csv'), sep = '\n')
+# cat(readLines('segmentdb_server.csv'), sep = '\n')
 ```
 
 Click [here](https://raw.githubusercontent.com/happyrabbit/linhui.org/gh-pages/CE_JSM2017/Examples/segmentdb.Rmd) to download the complete source code. Here is the [app](https://scientistcafe.shinyapps.io/shinysample/).
